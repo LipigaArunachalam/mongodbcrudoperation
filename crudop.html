@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion, Update, and Delete</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* Changed from space-between to center */
+            margin-top: 20px;
+            text-align: center; /* Added to center the buttons */
+}
+
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Insertion</h1>
+        <form id="insertForm" method="POST" action="http://localhost:2520/insert">
+            <div>
+                <label for="item">Item Name:</label>
+                <input type="text" id="item" name="item" required>
+            </div>
+            <!--<div>
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" name="quantity" required>
+            </div>!-->
+            <div>
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" required>
+            </div>
+            <div class="button-container">
+                <button type="submit">Insert</button>
+            </div>
+        </form>
+        
+        <h1>Update!</h1>
+        <form id="updateForm" method="POST" action="http://localhost:2520/update">
+            <div>
+                <label for="oldItem">Old Item Name:</label>
+                <input type="text" id="oldItem" name="oldItem" required>
+            </div>
+            <div>
+                <label for="newItem">New Item Name:</label>
+                <input type="text" id="newItem" name="newItem" required>
+                <label for="newprice">New Item Price:</label>
+                <input type="text" id="newprice" name="newprice" required>
+                <label for="newquantity">New Item Quantity:</label>
+                <input type="text" id="newquantity" name="newquantity" required>
+            </div>
+            <div class="button-container">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+
+        <h1>Delete!</h1>
+        <form id="deleteForm" method="POST" action="http://localhost:2520/delete">
+            <div>
+                <label for="deleteItem">Item Name:</label>
+                <input type="text" id="deleteItem" name="item" required>
+            </div>
+            <div class="button-container">
+                <button type="submit">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
